@@ -1,0 +1,105 @@
+// src/components/LandingPage.js
+import React from 'react';
+import { FaLock, FaMicrophone, FaSearch } from 'react-icons/fa';
+
+const LandingPage = () => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Main Content */}
+      <div className="flex flex-col md:flex-row flex-grow">
+        <div>
+            <img src="./public/images/lzycrazy.png" alt="" />
+        </div>
+        {/* Left Side: Video Section with Search Bar */}
+        <div className="relative w-full md:w-1/2 flex items-center justify-center bg-white">
+          {/* Search Bar on Top of Video */}
+          <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2 w-2/6">
+            <div className="flex items-center bg-white  p-2 rounded-full border-solid border-2 border-gray-300 shadow-md">
+              <input
+                type="text" readOnly
+                placeholder="Coming Soon..."
+                className="flex-grow px-1 py-1 rounded-l-lg focus:outline-none"
+              />
+              <FaMicrophone className="text-gray-500 mx-2" />
+              <FaSearch className="text-gray-500 mr-2" />
+            </div>
+          </div>
+
+          {/* Video */}
+          <div className="w-3/5 mt-20 md:mt-0">
+            <video
+              controls
+              className="w-full h-auto rounded-lg shadow-lg"
+            >
+              <source src="path-to-your-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        {/* Right Side: Login Form Section */}
+        <div className="w-full md:w-1/2 flex items-center justify-center bg-white p-6">
+          <div className="w-full md:w-4/6 max-w-md  border-solid border-2 border-gray-200 p-4 rounded-lg ">
+            <form className="space-y-4">
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  className="mt-1 block w-full px-4  py-4 text-lg border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                  placeholder="Enter your email or phone"
+                  required
+                />
+              </div>
+              <div>
+                <div className="relative">
+                  <input
+                    type="password"
+                    id="password"
+                    className="mt-1 block w-full px-4 py-4 text-lg border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="Enter your password"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <button
+                  type="submit"
+                  className="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 text-lg px-4 rounded-lg"
+                >
+                  Log In
+                </button>
+              </div>
+            </form>
+            <div className="text-center ">
+              <a href="#" className="text-blue-600 hover:underline">Forgotten password?</a>
+            </div>
+            <hr className='my-5' />
+            <div className="text-center mt-6">
+              <button className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-2 text-lg rounded-lg">
+                Create New Account
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="flex justify-between items-center bg-gray-100 p-5 text-black-600 text-lg">
+        <div className="flex space-x-12">
+          <a href="#" className="hover:underline">About</a>
+          <a href="#" className="hover:underline">Advertising</a>
+          <a href="#" className="hover:underline">Business</a>
+          <a href="#" className="hover:underline">Investor</a>
+          <a href="#" className="hover:underline">We are Hiring</a>
+        </div>
+        <div className="flex space-x-12">
+          <a href="#" className="hove8:underline">Privacy</a>
+          <a href="#" className="hover:underline">Terms</a>
+          <a href="#" className="hover:underline">Help</a>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
